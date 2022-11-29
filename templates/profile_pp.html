@@ -1,0 +1,89 @@
+{% extends 'temp.html' %}
+{% load static %}
+{% load profile_tags_wstepne %}
+{% block content %}
+
+    <!-- Strona -->
+
+
+    <div class="container marketing" style="color: white">
+        <hr class="featurette-divider">
+
+
+        <h3>Twoje zamówienia:</h3><br><br>
+
+
+
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="true" href="/accounts/profile/order/1">Szkolenia wstępne</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/profile/order/2">Szkolenia okresowe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/accounts/profile/order/3">Pierwsza pomoc</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/profile/order/4">Przeciwpożarowe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/profile/order/5">Inst. Przeciwpożarowe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/profile/order/6">Audyty</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/accounts/profile/order/7">Ocena ryzyka zawodowego</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="container my-3">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card shadow">
+                                <div class="card-header text-bg-light "><h2>Szkolenia z Pierwszej Pomocy</h2></div>
+                                <div class="card-body text-bg-light ">
+                                    <table class="table table-bordered" style="color: black">
+                                        <thead>
+                                        <tr>
+                                            <th>Nr. zamówienia</th>
+                                            <th>Imię</th>
+                                            <th>Nazwisko</th>
+                                            <th>Nazwa firmy</th>
+                                            <th>Numer NIP</th>
+                                            <th>Liczba osób</th>
+                                            <th>Data</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for item in orders_pp %}
+                                            <tr>
+                                                <td>{{ item.id }}</td>
+                                                <td>{{ item.imie }}</td>
+                                                <td>{{ item.nazwisko }}</td>
+                                                <td>{{ item.nazwa_firmy }}</td>
+                                                <td>{{ item.numer_nip }}</td>
+                                                <td>{{ item.liczba_osob }}</td>
+                                                <td>{{ item.data }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+
+    </div>
+
+{% endblock %}

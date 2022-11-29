@@ -1,0 +1,24 @@
+{% extends 'temp.html' %}
+{% load static %}
+{% load profile_tags_wstepne %}
+{% block content %}
+
+    <!-- Strona -->
+
+
+    <div class="container marketing" style="color: white">
+        <hr class="featurette-divider">
+
+        <h1>Twój profil:</h1><br><br>
+        <h4>Nazwa użytkownika: {{ request.user.username }}</h4>
+        <h4>Imię: {{ request.user.first_name }}</h4>
+        <h4>Nazwisko: {{ request.user.last_name }}</h4>
+        <h4>E-mail: {{ request.user.email }}</h4><br>
+        <h4>Sprawdź swoje zamówienia: <a class="btn btn-primary" href="/accounts/profile/order/1">Sprawdź</a></h4><br>
+        <h4>Zresetuj swoje hasło: <a class="btn btn-primary" href="/accounts/password_change/">Resetuj</a></h4>
+
+        <hr class="featurette-divider">
+
+    </div>
+
+{% endblock %}

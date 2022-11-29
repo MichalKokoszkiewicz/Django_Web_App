@@ -1,0 +1,32 @@
+    {% extends 'temp.html' %}
+    {% load static %}
+    {% load crispy_forms_tags %}
+    {% block content %}
+
+        <div class="container marketing" style="color: white">
+            <hr class="featurette-divider">
+            <form method="post" action=".">
+                {% csrf_token %}
+                <div class="row" style="color: white">
+                    <div class="col-md-6">
+                        {{ form.first_name | as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.last_name | as_crispy_field }}
+                    </div>
+                </div>
+                <div>
+                    <p>{{ form.email | as_crispy_field }}</p>
+                    <p>{{ form.username | as_crispy_field }}</p>
+                    <p>{{ form.password1 | as_crispy_field }}</p>
+                    <p>{{ form.password2 | as_crispy_field }}</p>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <label>&nbsp;</label><input class="btn btn-primary btn-lg me-md-2" type="submit" value="Zarejestruj się">
+                </div>
+            </form>
+            <hr class="featurette-divider">
+
+        </div>
+
+    {% endblock %}

@@ -1,0 +1,45 @@
+    {% extends 'temp.html' %}
+    {% load static %}
+    {% load crispy_forms_tags %}
+    {% block content %}
+
+
+    <!-- Strona -->
+
+        <div class="container marketing" style="color: white">
+            <hr class="featurette-divider">
+
+            <h2>Zamówienie na przeprowadzenie audytów:</h2>
+
+            <form method="post"><br>
+                {% csrf_token %}
+                {{ form.rodzaj_audytu | as_crispy_field }}
+                <div class="row" style="color: white">
+                    <div class="col-md-6">
+                        {{ form.imie | as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.nazwisko | as_crispy_field }}
+                    </div>
+                </div>
+                {{ form.email | as_crispy_field }}
+                {{ form.nazwa_firmy | as_crispy_field}}
+                <div class="row" style="color: white">
+                    <div class="col-md-6">
+                        {{ form.numer_nip | as_crispy_field }}
+                    </div>
+                    <div class="col-md-6">
+                        {{ form.numer_telefonu | as_crispy_field }}
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                    <input class="btn btn-primary btn-lg me-md-2" type="submit" value="Zamów">
+                </div>
+            </form>
+
+
+            <hr class="featurette-divider">
+
+        </div>
+
+    {% endblock %}
