@@ -24,4 +24,4 @@ This is a web application project to sell health and safety services. The app wa
 
 # System architecture
 
-[![a.png](https://i.postimg.cc/SN1h8z43/a.png)](https://postimg.cc/MvBNJHvm)
+[![Diagram-bez-tytu-u-drawio-2.png](https://i.postimg.cc/y8mCdZ2c/Diagram-bez-tytu-u-drawio-2.png)](https://postimg.cc/87z0Xjpz)
